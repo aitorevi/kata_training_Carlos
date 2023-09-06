@@ -1,4 +1,12 @@
 function countFactorizations(number: number) {
+    function isNotInteger(number: number) {
+        return number !== Math.floor(number);
+    }
+
+    if (isNotInteger(number)) {
+        throw new Error("only integers are allowed")
+    }
+    number = Math.abs(number)
     const digitsCount = number.toString().length
     if (digitsCount > 1) {
         const digits = number.toString().split("")
@@ -17,6 +25,11 @@ describe("Factorize", () => {
         expect(countFactorizations(33)).toBe(1)
         expect(countFactorizations(99)).toBe(2)
         expect(countFactorizations(992)).toBe(3)
+        expect(countFactorizations(-99)).toBe(2)
+    })
+
+    it("rejects non integer numbers", () => {
+        expect(() => (countFactorizations(9.99))).toThrow("only integers are allowed")
     })
 })
 
@@ -25,6 +38,7 @@ describe("Factorize", () => {
 // 992 -> 9 * 9 * 2 = 162 , 1 * 6 * 2 = 12 , 1 * 2 = 2 - descompuesto en 3 iteracion
 // 33 -> 3 * 3 = 9
 // 99 -> 9 * 9 = 81 , 8 * 1 = 8 - descompuesto en 2 iteraciones
+// -99 -> -9 * -9 = 81 , 8 * 1 = 8 - descompuesto en 2 iteraciones
 // 5 -> 0 iteraciones
 // 
 
