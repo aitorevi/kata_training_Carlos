@@ -1,9 +1,10 @@
 function countFactorizations(number: number) {
     const digitsCount = number.toString().length
     if (digitsCount > 1) {
-        const transformNumberToString = number.toString()
-        const result = Number(transformNumberToString[0]) * Number(transformNumberToString[1])
-        return 1 + countFactorizations(result)
+        const stringifiedNumber = number.toString()
+        const digits = stringifiedNumber.split("")
+        const factorization = digits.reduce((accumulator , currentValue) => Number(accumulator) * Number(currentValue), 1)
+        return 1 + countFactorizations(factorization)
     }
     return 0;
 }
