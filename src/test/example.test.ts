@@ -15,12 +15,14 @@ describe("Factorize", () => {
 
     it("counts factorizations for numbers with more than one digit", () => {
         expect(countFactorizations(33)).toBe(1)
+        expect(countFactorizations(99)).toBe(2)
+        expect(countFactorizations(992)).toBe(3)
     })
 })
 
 // Codewars
 
-// 123 -> 1 * 2 * 3 = 6 - descompuesto en 1 iteracion
+// 992 -> 9 * 9 * 2 = 162 , 1 * 6 * 2 = 12 , 1 * 2 = 2 - descompuesto en 3 iteracion
 // 33 -> 3 * 3 = 9
 // 99 -> 9 * 9 = 81 , 8 * 1 = 8 - descompuesto en 2 iteraciones
 // 5 -> 0 iteraciones
