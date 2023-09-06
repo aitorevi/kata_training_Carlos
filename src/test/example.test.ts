@@ -1,4 +1,8 @@
 function countFactorizations(number: number) {
+    const digitsCount = number.toString().length
+    if (digitsCount > 1) {
+        return 1
+    }
     return 0;
 }
 
