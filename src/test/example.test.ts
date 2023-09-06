@@ -1,3 +1,7 @@
+function countFactorizations(number: number) {
+    return 0;
+}
+
 describe("Factorize", () => {
     it("can´t factorize single digit numbers", () => {
         expect(countFactorizations(5)).toBe(0)
