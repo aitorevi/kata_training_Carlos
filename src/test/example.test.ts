@@ -40,5 +40,5 @@ describe("Factorize", () => {
 // 99 -> 9 * 9 = 81 , 8 * 1 = 8 - descompuesto en 2 iteraciones
 // -99 -> -9 * -9 = 81 , 8 * 1 = 8 - descompuesto en 2 iteraciones
 // 5 -> 0 iteraciones
-// 
+//
 
